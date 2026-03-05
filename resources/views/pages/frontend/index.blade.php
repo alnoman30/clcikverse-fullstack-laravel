@@ -1,127 +1,10 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
+@extends('layouts.frontend.base')
 
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>Calvin</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+@section('title', 'ClickVerse - Home')
+@section('content')
+    @include('layouts.frontend.partials.header_one')
 
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script defer src="js/fontawesome/all.min.js"></script>
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-
-</head>
-
-<body id="top">
-
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader"> 
-    	<div id="loader"></div>
-    </div>
-
-
-    <!-- header
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="s-header__logo">
-            <a class="logo" href="index.html">
-                <img src="images/logo.svg" alt="Homepage">
-            </a>
-        </div>
-
-        <div class="row s-header__navigation">
-
-            <nav class="s-header__nav-wrap">
-
-                <h3 class="s-header__nav-heading h6">Navigate to</h3>
-
-                <ul class="s-header__nav">
-                    <li class="current"><a href="index.html" title="">Home</a></li>
-                    <li class="has-children">
-                        <a href="#0" title="">Categories</a>
-                        <ul class="sub-menu">
-                            <li><a href="category.html">Design</a></li>
-                            <li><a href="category.html">Lifestyle</a></li>
-                            <li><a href="category.html">Photography</a></li>
-                            <li><a href="category.html">Vacation</a></li>
-                            <li><a href="category.html">Work</a></li>
-                            <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Family</a></li>
-                            <li><a href="category.html">Relationship</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <a href="#0" title="">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="single-video.html">Video Post</a></li>
-                            <li><a href="single-audio.html">Audio Post</a></li>
-                            <li><a href="single-standard.html">Standard Post</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="styles.html" title="">Styles</a></li>
-                    <li><a href="about.html" title="">About</a></li>
-                    <li><a href="contact.html" title="">Contact</a></li>
-                </ul> <!-- end s-header__nav -->
-
-                <a href="#0" title="Close Menu" class="s-header__overlay-close close-mobile-menu">Close</a>
-
-            </nav> <!-- end s-header__nav-wrap -->
-
-        </div> <!-- end s-header__navigation -->
-
-        <a class="s-header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
-
-        <div class="s-header__search">
-
-            <div class="s-header__search-inner">
-                <div class="row wide">
-
-                    <form role="search" method="get" class="s-header__search-form" action="#">
-                        <label>
-                            <span class="h-screen-reader-text">Search for:</span>
-                            <input type="search" class="s-header__search-field" placeholder="Search for..." value="" name="s" title="Search for:" autocomplete="off">
-                        </label>
-                        <input type="submit" class="s-header__search-submit" value="Search"> 
-                    </form>
-
-                    <a href="#0" title="Close Search" class="s-header__overlay-close">Close</a>
-
-                </div> <!-- end row -->
-            </div> <!-- s-header__search-inner -->
-
-        </div> <!-- end s-header__search wrap -->	
-
-        <a class="s-header__search-trigger" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.982 17.983"><path fill="#010101" d="M12.622 13.611l-.209.163A7.607 7.607 0 017.7 15.399C3.454 15.399 0 11.945 0 7.7 0 3.454 3.454 0 7.7 0c4.245 0 7.699 3.454 7.699 7.7a7.613 7.613 0 01-1.626 4.714l-.163.209 4.372 4.371-.989.989-4.371-4.372zM7.7 1.399a6.307 6.307 0 00-6.3 6.3A6.307 6.307 0 007.7 14c3.473 0 6.3-2.827 6.3-6.3a6.308 6.308 0 00-6.3-6.301z"/></svg>
-        </a>
-
-    </header> <!-- end s-header -->
-
-
-    <!-- hero
+       <!-- hero
     ================================================== -->
     <section id="hero" class="s-hero">
 
@@ -129,7 +12,7 @@
 
             <div class="s-hero__slide">
 
-                <div class="s-hero__slide-bg" style="background-image: url('images/slide1-bg-3000.jpg');"></div>
+                <div class="s-hero__slide-bg" style="background-image: url('{{ asset('assets/frontend/images/slide1-bg-3000.jpg') }}');"></div>
 
                 <div class="row s-hero__slide-content animate-this">
                     <div class="column">
@@ -138,8 +21,8 @@
                                 <a href="#0">Lifestyle</a>
                                 <a href="#0">Design</a>
                             </span>
-                            <span class="byline"> 
-                                Posted by 
+                            <span class="byline">
+                                Posted by
                                 <span class="author">
                                     <a href="#0">Jonathan Doe</a>
                                 </span>
@@ -157,7 +40,7 @@
 
             <div class="s-hero__slide">
 
-                <div class="s-hero__slide-bg" style="background-image: url('images/slide2-bg-3000.jpg');"></div>
+                <div class="s-hero__slide-bg" style="background-image: url('{{ asset('assets/frontend/images/slide2-bg-3000.jpg') }}');"></div>
 
                 <div class="row s-hero__slide-content animate-this">
                     <div class="column">
@@ -165,8 +48,8 @@
                             <span class="cat-links">
                                 <a href="#0">Work</a>
                             </span>
-                            <span class="byline"> 
-                                Posted by 
+                            <span class="byline">
+                                Posted by
                                 <span class="author">
                                     <a href="#0">Juan Dela Cruz</a>
                                 </span>
@@ -184,7 +67,7 @@
 
             <div class="s-hero__slide"">
 
-                <div class="s-hero__slide-bg" style="background-image: url('images/slide3-bg-3000.jpg');"></div>
+                <div class="s-hero__slide-bg" style="background-image: url('{{ asset('assets/frontend/images/slide3-bg-3000.jpg') }}');"></div>
 
                 <div class="row s-hero__slide-content animate-this">
                     <div class="column">
@@ -193,8 +76,8 @@
                                 <a href="#0">Health</a>
                                 <a href="#0">Lifestyle</a>
                             </span>
-                            <span class="byline"> 
-                                Posted by 
+                            <span class="byline">
+                                Posted by
                                 <span class="author">
                                     <a href="#0">Jane Doe</a>
                                 </span>
@@ -256,18 +139,18 @@
                     </div>
 
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/macbook-600.jpg" 
-                                     srcset="images/thumbs/masonry/macbook-600.jpg 1x, images/thumbs/masonry/macbook-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/macbook-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/macbook-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/macbook-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="https://www.dreamhost.com/r.cgi?287326">Need Web Hosting for Your Websites?</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -287,22 +170,22 @@
                             </div>
                             <a class="entry__more-link" href="https://www.dreamhost.com/r.cgi?287326">Learn More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
 
                     <article class="brick entry" data-aos="fade-up">
-        
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/woodcraft-600.jpg" 
-                                     srcset="images/thumbs/masonry/woodcraft-600.jpg 1x, images/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/woodcraft-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/woodcraft-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/woodcraft-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-        
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">Just a Normal Simple Blog Post.</a></h1>
-        
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -310,7 +193,7 @@
                                     </span>
                                 </span>
                                     <span class="cat-links">
-                                        <a href="#">Design</a> 
+                                        <a href="#">Design</a>
                                         <a href="#">Photography</a>
                                     </span>
                                 </div>
@@ -322,22 +205,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-        
+
                     </article> <!-- end entry -->
-    
+
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/tulips-600.jpg" 
-                                     srcset="images/thumbs/masonry/tulips-600.jpg 1x, images/thumbs/masonry/tulips-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/tulips-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/tulips-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/tulips-1200.jpg') }} 2x" alt="">
                             </a>
                         </div>  <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">10 Interesting Facts About Caffeine.</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -356,18 +239,18 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
 
                     <article class="brick entry" data-aos="fade-up">
-        
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/grayscale-600.jpg" 
-                                     srcset="images/thumbs/masonry/grayscale-600.jpg 1x, images/thumbs/masonry/grayscale-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/grayscale-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/grayscale-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/grayscale-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-        
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">5  Grayscale Coloring Techniques.</a></h1>
@@ -390,22 +273,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                        
+
                     </article> <!-- end article -->
 
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/walk-600.jpg" 
-                                     srcset="images/thumbs/masonry/walk-600.jpg 1x, images/thumbs/masonry/walk-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/walk-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/walk-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/walk-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">Using Repetition and Patterns in Photography.</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -413,11 +296,11 @@
                                     </span>
                                 </span>
                                     <span class="cat-links">
-                                        <a href="#">Work</a> 
+                                        <a href="#">Work</a>
                                         <a href="#">Lifestyle</a>
                                     </span>
                                 </div>
-                                
+
                             </div>
                             <div class="entry__excerpt">
                                 <p>
@@ -426,22 +309,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
-    
+
                     <article class="brick entry" data-aos="fade-up">
-            
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/jump-600.jpg" 
-                                     srcset="images/thumbs/masonry/jump-600.jpg 1x, images/thumbs/masonry/jump-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/jump-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/jump-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/jump-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-            
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">Create Meaningful Family Moments.</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -461,22 +344,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                            
+
                     </article> <!-- end article -->
-    
+
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/real-600.jpg" 
-                                     srcset="images/thumbs/masonry/real-600.jpg 1x, images/thumbs/masonry/real-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/real-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/real-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/real-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">How We Live Is What Makes Us Real.</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -484,7 +367,7 @@
                                     </span>
                                 </span>
                                     <span class="cat-links">
-                                        <a href="#">Travel</a> 
+                                        <a href="#">Travel</a>
                                         <a href="#">Vacation</a>
                                     </span>
                                 </div>
@@ -496,22 +379,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
-    
+
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/lamp-600.jpg" 
-                                     srcset="images/thumbs/masonry/lamp-600.jpg 1x, images/thumbs/masonry/lamp-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/lamp-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/lamp-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/lamp-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">Symmetry In Modern Design.</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -519,7 +402,7 @@
                                     </span>
                                 </span>
                                     <span class="cat-links">
-                                        <a href="#">Design</a> 
+                                        <a href="#">Design</a>
                                         <a href="#">Photography</a>
                                     </span>
                                 </div>
@@ -531,22 +414,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
 
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/clock-600.jpg" 
-                                     srcset="images/thumbs/masonry/clock-600.jpg 1x, images/thumbs/masonry/clock-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/clock-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/clock-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/clock-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">10 Tips for Managing Time Effectively.</a></h1>
-    
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -566,22 +449,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
 
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/beetle-600.jpg" 
-                                     srcset="images/thumbs/masonry/beetle-600.jpg 1x, images/thumbs/masonry/beetle-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/beetle-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/beetle-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/beetle-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">Throwback To The Good Old Days.</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -600,22 +483,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
 
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/phone-and-keyboard-600.jpg" 
-                                     srcset="images/thumbs/masonry/phone-and-keyboard-600.jpg 1x, images/thumbs/masonry/phone-and-keyboard-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/phone-and-keyboard-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/phone-and-keyboard-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/phone-and-keyboard-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">3 Reasons to Keep Your Workplace Tidy.</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -634,22 +517,22 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
 
                     <article class="brick entry" data-aos="fade-up">
-    
+
                         <div class="entry__thumb">
                             <a href="single-standard.html" class="thumb-link">
-                                <img src="images/thumbs/masonry/seashore-600.jpg" 
-                                     srcset="images/thumbs/masonry/seashore-600.jpg 1x, images/thumbs/masonry/seashore-1200.jpg 2x" alt="">
+                                <img src="{{ asset('assets/frontend/images/thumbs/masonry/seashore-600.jpg') }}"
+                                     srcset="{{ asset('assets/frontend/images/thumbs/masonry/seashore-600.jpg') }} 1x, {{ asset('assets/frontend/images/thumbs/masonry/seashore-1200.jpg') }} 2x" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->
-    
+
                         <div class="entry__text">
                             <div class="entry__header">
                                 <h1 class="entry__title"><a href="single-standard.html">What The Beach Does to Your Brain.</a></h1>
-                                
+
                                 <div class="entry__meta">
                                     <span class="byline"">By:
                                         <span class='author'>
@@ -657,7 +540,7 @@
                                     </span>
                                 </span>
                                     <span class="cat-links">
-                                        <a href="#">Health</a> 
+                                        <a href="#">Health</a>
                                         <a href="#">Vacation</a>
                                     </span>
                                 </div>
@@ -669,7 +552,7 @@
                             </div>
                             <a class="entry__more-link" href="#0">Read More</a>
                         </div> <!-- end entry__text -->
-                    
+
                     </article> <!-- end article -->
 
                 </div> <!-- end brick-wrapper -->
@@ -705,110 +588,4 @@
         </div> <!-- end s-bricks -->
 
     </section> <!-- end s-content -->
-
-
-    <!-- footer
-    ================================================== -->
-    <footer class="s-footer">
-
-        <div class="s-footer__main">
-
-            <div class="row">
-
-                <div class="column large-3 medium-6 tab-12 s-footer__info">
-
-                    <h5>About Our Site</h5>
-
-                    <p>
-                    Lorem ipsum Ut velit dolor Ut labore id fugiat in ut 
-                    fugiat nostrud qui in dolore commodo eu magna Duis 
-                    cillum dolor officia esse mollit proident Excepteur 
-                    exercitation nulla. Lorem ipsum In reprehenderit 
-                    commodo aliqua irure.
-                    </p>
-
-                </div> <!-- end s-footer__info -->
-
-                <div class="column large-2 medium-3 tab-6 s-footer__site-links">
-
-                    <h5>Site Links</h5>
-
-                    <ul>
-                        <li><a href="#0">About Us</a></li>
-                        <li><a href="#0">Blog</a></li>
-                        <li><a href="#0">FAQ</a></li>
-                        <li><a href="#0">Terms</a></li>
-                        <li><a href="#0">Privacy Policy</a></li>
-                    </ul>
-
-                </div> <!-- end s-footer__site-links -->  
-
-                <div class="column large-2 medium-3 tab-6 s-footer__social-links">
-
-                    <h5>Follow Us</h5>
-
-                    <ul>
-                        <li><a href="#0">Twitter</a></li>
-                        <li><a href="#0">Facebook</a></li>
-                        <li><a href="#0">Dribbble</a></li>
-                        <li><a href="#0">Pinterest</a></li>
-                        <li><a href="#0">Instagram</a></li>
-                    </ul>
-
-                </div> <!-- end s-footer__social links --> 
-
-                <div class="column large-3 medium-6 tab-12 s-footer__subscribe">
-
-                    <h5>Sign Up for Newsletter</h5>
-
-                    <p>Signup to get updates on articles, interviews and events.</p>
-
-                    <div class="subscribe-form">
-                
-                        <form id="mc-form" class="group" novalidate="true">
-
-                            <input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="Your Email Address" required=""> 
-                
-                            <input type="submit" name="subscribe" value="subscribe" >
-                
-                            <label for="mc-email" class="subscribe-message"></label>
-                
-                        </form>
-
-                    </div>
-
-                </div> <!-- end s-footer__subscribe -->
-
-            </div> <!-- end row -->
-
-        </div> <!-- end s-footer__main -->
-
-        <div class="s-footer__bottom">
-            <div class="row">
-                <div class="column">
-                    <div class="ss-copyright">
-                        <span>© Copyright Calvin 2020</span> 
-                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
-                    </div> <!-- end ss-copyright -->
-                </div>
-            </div> 
-
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">
-                    <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="15" height="15"><path d="M7.5 1.5l.354-.354L7.5.793l-.354.353.354.354zm-.354.354l4 4 .708-.708-4-4-.708.708zm0-.708l-4 4 .708.708 4-4-.708-.708zM7 1.5V14h1V1.5H7z" fill="currentColor"></path></svg>
-                </a>
-            </div> <!-- end ss-go-top -->
-        </div> <!-- end s-footer__bottom -->
-
-   </footer> <!-- end s-footer -->
-
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.5.0.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-</body>
-
-</html>
+@endsection
