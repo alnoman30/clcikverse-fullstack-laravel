@@ -86,15 +86,15 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('admin.tag') }}" class="nav-link @if(request()->routeIs('admin.tag')) active @endif">
               <i class="nav-icon fas fa-tag"></i>
               <p>Tags</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-pen-square"></i>
+            <a href="{{ route('admin.post') }}" class="nav-link @if(request()->routeIs('admin.post')) active @endif">
+              <i class="nav-icon fas fa-file-alt"></i>
               <p>Posts</p>
             </a>
           </li>
