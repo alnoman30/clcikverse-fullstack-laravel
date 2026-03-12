@@ -39,9 +39,9 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
 
-                                <h3 class="card-title">Edit Tag - Technology</h3>
+                                <h3 class="card-title">Edit Tag - {{ $tag->name }}</h3>
 
-                                <a href="{{ route('admin.tag') }}" class="btn btn-primary">
+                                <a href="{{ route('tag.index') }}" class="btn btn-primary">
                                     Go Back to Tag List
                                 </a>
 
@@ -55,26 +55,27 @@
                             <div class="row">
                                 <div class="col-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
 
-                                    <form action="#" method="POST">
+                                    <form action="{{ route('tag.update', $tag->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
 
                                         <div class="card-body">
 
-                                            <!-- Example Error -->
-                                            <div class="alert alert-danger" style="display:none;">
-                                                <ul class="mb-0">
-                                                    <li>Tag name is required</li>
-                                                </ul>
-                                            </div>
-
                                             <div class="form-group">
                                                 <label for="name">Tag Name</label>
-                                                <input type="text" name="name" class="form-control" value="Technology"
+                                                <input type="text" name="name" value="{{ old('name', $tag->name) }}" class="form-control"
                                                     placeholder="Enter name">
+                                                @error('name')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="description">Description</label>
-                                                <textarea name="description" id="description" rows="4" class="form-control" placeholder="Enter description">Technology related articles</textarea>
+                                                <textarea name="description" id="description" rows="4" class="form-control" placeholder="Enter description">{{ old('description', $tag->description) }}</textarea>
+                                                @error('description')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
 
                                         </div>

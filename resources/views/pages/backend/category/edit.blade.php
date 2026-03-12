@@ -35,9 +35,9 @@
 
           <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
-              <h3 class="card-title">Edit Category - Technology</h3>
+              <h3 class="card-title">Edit Category - {{ $category->name }}</h3>
 
-            <a href="{{ route('admin.category') }}" class="btn btn-primary">Go Back to Category List</a>
+            <a href="{{ route('category.index') }}" class="btn btn-primary">Go Back to Category List</a>
             </div>
           </div>
 
@@ -46,19 +46,25 @@
             <div class="row">
               <div class="col-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
 
-                <form action="#" method="POST">
+                <form action="{{ route('category.update', $category->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
 
                   <div class="card-body">
 
                     <div class="form-group">
                       <label for="name">Category Name</label>
-                      <input type="text" name="name" class="form-control" value="Technology" placeholder="Enter name">
+                      <input type="text" name="name" class="form-control" value="{{ old('name', $category->name) }}" placeholder="Enter name">
+                      @error('name')
+                        <small class="text-danger">{{ $message }}</small>
+
+                      @enderror
                     </div>
 
                     <div class="form-group">
                       <label for="description">Description</label>
                       <textarea name="description" id="description" rows="4" class="form-control"
-                        placeholder="Enter description">Technology related articles and tutorials</textarea>
+                        placeholder="Enter description">{{ old('description', $category->description) }}</textarea>
                     </div>
 
                   </div>

@@ -78,16 +78,16 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.category') }}"
-                                class="nav-link @if (request()->routeIs('admin.category')) active @endif">
+                            <a href="{{ route('category.index') }}"
+                                class="nav-link @if (request()->routeIs('category.index')) active @endif">
                                 <i class="nav-icon fas fa-tags"></i>
                                 <p>Categories</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.tag') }}"
-                                class="nav-link @if (request()->routeIs('admin.tag')) active @endif">
+                            <a href="{{ route('tag.index') }}"
+                                class="nav-link @if (request()->routeIs('tag.index')) active @endif">
                                 <i class="nav-icon fas fa-tag"></i>
                                 <p>Tags</p>
                             </a>

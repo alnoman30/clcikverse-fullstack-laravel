@@ -13,39 +13,8 @@ class AdminController extends Controller
     }
 
 
-    // Category
-    public function category()
-    {
-        return view('pages.backend.category.index');
-    }
-
-    public function categoryCreate()
-    {
-        return view('pages.backend.category.create');
-    }
-
-    public function categoryEdit($id)
-    {
-        return view('pages.backend.category.edit');
-    }
 
 
-
-    // Tag
-    public function tag()
-    {
-        return view('pages.backend.tag.index');
-    }
-
-    public function tagCreate()
-    {
-        return view('pages.backend.tag.create');
-    }
-
-    public function tagEdit($id)
-    {
-        return view('pages.backend.tag.edit');
-    }
 
 
     // Post routes
