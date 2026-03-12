@@ -1,4 +1,3 @@
-
 <!-- header
 ================================================== -->
 <header class="s-header">
@@ -34,6 +33,13 @@
 
                 </li>
                 <li><a href="{{ route('contact') }}" title="">Contact</a></li>
+                <li>
+                    @auth
+                        <a href="{{ route('dashboard') }}" title="">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" title="">Login</a>
+                    @endauth
+                </li>
             </ul>
 
             <a href="#0" title="Close Menu" class="s-header__overlay-close close-mobile-menu">
@@ -57,15 +63,8 @@
                     <label>
                         <span class="h-screen-reader-text">Search for:</span>
 
-                        <input
-                            type="search"
-                            class="s-header__search-field"
-                            placeholder="Search for..."
-                            value=""
-                            name="s"
-                            title="Search for:"
-                            autocomplete="off"
-                        >
+                        <input type="search" class="s-header__search-field" placeholder="Search for..." value=""
+                            name="s" title="Search for:" autocomplete="off">
                     </label>
 
                     <input type="submit" class="s-header__search-submit" value="Search">
@@ -83,12 +82,11 @@
     <a class="s-header__search-trigger" href="#">
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.982 17.983">
-            <path fill="#010101"
-            d="M12.622 13.611l-.209.163A7.607 7.607 0 017.7 15.399C3.454 15.399 0 11.945 0 7.7
+            <path fill="#010101" d="M12.622 13.611l-.209.163A7.607 7.607 0 017.7 15.399C3.454 15.399 0 11.945 0 7.7
             0 3.454 3.454 0 7.7 0c4.245 0 7.699 3.454 7.699 7.7a7.613 7.613 0 01-1.626
             4.714l-.163.209 4.372 4.371-.989.989-4.371-4.372zM7.7 1.399a6.307 6.307
             0 00-6.3 6.3A6.307 6.307 0 007.7 14c3.473 0 6.3-2.827 6.3-6.3a6.308
-            6.308 0 00-6.3-6.301z"/>
+            6.308 0 00-6.3-6.301z" />
         </svg>
 
     </a>
