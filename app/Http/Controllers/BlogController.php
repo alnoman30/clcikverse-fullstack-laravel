@@ -112,6 +112,7 @@ class BlogController extends Controller
         return redirect()->route('blog.index');
     }
 
+
     // Delete blog
     public function destroy(Blog $blog)
     {
@@ -123,9 +124,4 @@ class BlogController extends Controller
         return redirect()->route('blog.index');
     }
 
-    public function show(Blog $blog)
-    {
-        $blog->load('category', 'user', 'tags');
-        return view('pages.backend.blog.show', compact('blog'));
-    }
 }

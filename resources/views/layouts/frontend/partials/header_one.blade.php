@@ -21,14 +21,9 @@
                     <a href="#0" title="">Categories</a>
 
                     <ul class="sub-menu">
-                        <li><a href="">Design</a></li>
-                        <li><a href="">Lifestyle</a></li>
-                        <li><a href="">Photography</a></li>
-                        <li><a href="">Vacation</a></li>
-                        <li><a href="">Work</a></li>
-                        <li><a href="">Health</a></li>
-                        <li><a href="">Family</a></li>
-                        <li><a href="">Relationship</a></li>
+                        @foreach ($categories as $category )
+                            <li><a href="">{{$category->name}}</a></li>
+                        @endforeach
                     </ul>
 
                 </li>

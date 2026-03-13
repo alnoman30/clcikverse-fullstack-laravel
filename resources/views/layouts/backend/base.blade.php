@@ -162,11 +162,11 @@
         <!-- Footer -->
         <footer class="main-footer">
             <div class="float-right d-none d-sm-inline">
-                Developed By <a href="https://alnoman.vercel.app/">AL Noman</a>
+                Developed By <a href="https://alnoman.vercel.app/">Abdullah Al Noman</a>
             </div>
             <strong>
-                Copyright © 2026
-                <a href="https://adminlte.io">AdminLTE</a>.
+                Copyright © {{ date('Y') }}
+                <a href="https://github.com/alnoman30">ClickVerse</a>.
             </strong>
         </footer>
 

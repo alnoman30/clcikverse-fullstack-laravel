@@ -99,8 +99,8 @@
             <div class="row">
                 <div class="column">
                     <div class="ss-copyright">
-                        <span>© Copyright Calvin 2020</span>
-                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                        <span>© Copyright ClickVerse {{ date('Y') }}</span>
+                        <span>Developed by <a href="https://alnoman.vercel.app/">Abdullah Al Noman</a></span>
                     </div>
                 </div>
             </div>

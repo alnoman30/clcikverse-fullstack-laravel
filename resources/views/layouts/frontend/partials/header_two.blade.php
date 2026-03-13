@@ -19,14 +19,9 @@
                    <li class="has-children current">
                        <a href="#0" title="">Categories</a>
                        <ul class="sub-menu">
-                           <li><a href="category.html">Design</a></li>
-                           <li><a href="category.html">Lifestyle</a></li>
-                           <li><a href="category.html">Photography</a></li>
-                           <li><a href="category.html">Vacation</a></li>
-                           <li><a href="category.html">Work</a></li>
-                           <li><a href="category.html">Health</a></li>
-                           <li><a href="category.html">Family</a></li>
-                           <li><a href="category.html">Relationship</a></li>
+                           @foreach ($categories as $category )
+                            <li><a href="">{{$category->name}}</a></li>
+                        @endforeach
                        </ul>
                    </li>
                    <li><a href="{{ route('contact') }}" title="">Contact</a></li>
