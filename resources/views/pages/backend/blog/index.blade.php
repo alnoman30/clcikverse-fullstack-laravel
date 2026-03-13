@@ -3,87 +3,50 @@
 @section('title', 'Dashboard - ClickVerse')
 
 @section('content')
-    <!-- Content Header (Page header) -->
+
+    <!-- Content Header -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
+
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard</h1>
+                    <h1 class="m-0 text-dark">Blog List</h1>
                 </div>
+
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item active">Blog List</li>
                     </ol>
                 </div>
+
             </div>
         </div>
     </div>
 
-    <!-- Main content -->
+
+    <!-- Main Content -->
     <div class="content">
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3>{{ $blogs->count() }}</h3>
-                            <p>Posts</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-pen-square"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>{{ $categories->count() }}</h3>
-                            <p>Categories</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-tags"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>{{ $tags->count()}}</h3>
-                            <p>Tags</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-tag"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>{{ $users->count() }}</h3>
-                            <p>Users</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
                 <div class="col-lg-12">
+
                     <div class="card">
 
+                        <!-- Card Header -->
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Post List</h3>
-                                <a href="#" class="btn btn-primary">Post List</a>
+
+                                <h3 class="card-title">Blog List</h3>
+
+                                <a href="{{ route('blog.create') }}" class="btn btn-primary">
+                                    Create Blog
+                                </a>
+
                             </div>
                         </div>
+
 
                         <!-- Card Body -->
                         <div class="card-body p-0">
@@ -143,8 +106,8 @@
                                                     <i class="fas fa-link"></i>
                                                 </a>
 
-                                                <form action="{{ route('blog.destroy', $blog->id) }}" method="POST"
-                                                    class="delete-form" style="display:inline;">
+                                                <form action="{{ route('blog.destroy', $blog->id) }}"
+                                                    method="POST" class="delete-form" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
 
@@ -194,9 +157,35 @@
                         </div>
 
                     </div>
+
                 </div>
             </div>
 
         </div>
     </div>
+
+
+    <script>
+document.querySelectorAll('.delete-btn').forEach(function(button) {
+    button.addEventListener('click', function () {
+
+        let form = this.closest('.delete-form');
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This Blog will be deleted!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Delete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit();
+            }
+        });
+
+    });
+});
+</script>
 @endsection

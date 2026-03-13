@@ -11,7 +11,7 @@ class CategoryController extends Controller
     // Display a listing of the resource.
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::withCount('blogs')->get();
         return view('pages.backend.category.index', compact('categories'));
     }
 

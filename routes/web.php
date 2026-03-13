@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,10 +42,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 
     // Post routes
-    Route::get('/post', [AdminController::class, 'post'])->name('admin.post');
-    Route::get('/post/create', [AdminController::class, 'postCreate'])->name('admin.post.create');
-    Route::get('/post/{id}/edit', [AdminController::class, 'postEdit'])->name('admin.post.edit');
-    Route::get('/post/{id}', [AdminController::class, 'postShow'])->name('admin.post.show');
+    Route::resource('blog', BlogController::class);
 
 });
 

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Database\Seeders\AdminSeeder;
 use Database\Seeders\CategorySeeder;
+use Database\Seeders\BlogSeeder;
 use Database\Seeders\TagSeeder;
 
 
@@ -25,6 +26,9 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call([
             TagSeeder::class,
+        ]);
+        $this->call([
+            BlogSeeder::class,
         ]);
 
         User::factory()->create([

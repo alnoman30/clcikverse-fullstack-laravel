@@ -23,6 +23,11 @@ class User extends Authenticatable
         'role'
     ];
 
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

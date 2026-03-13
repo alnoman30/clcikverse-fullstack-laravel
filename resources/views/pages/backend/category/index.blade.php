@@ -55,7 +55,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $category->name }}</td>
                                             <td>{{ $category->slug }}</td>
-                                            <td>12</td>
+                                            <td>{{ $category->blogs_count }}</td>
                                             <td class="d-flex">
                                                 <a href="{{ route('category.edit', $category->id) }}"
                                                     class="btn btn-sm btn-primary mr-1">

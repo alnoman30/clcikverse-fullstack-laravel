@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ asset('assets/backend/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/backend/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/backend/plugins/toastr/toastr.min.css') }}">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -94,10 +93,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.post') }}"
-                                class="nav-link @if (request()->routeIs('admin.post')) active @endif">
+                            <a href="{{ route('blog.index') }}"
+                                class="nav-link @if (request()->routeIs('blog.index')) active @endif">
                                 <i class="nav-icon fas fa-file-alt"></i>
-                                <p>Posts</p>
+                                <p>Blogs</p>
                             </a>
                         </li>
 
@@ -163,10 +162,10 @@
         <!-- Footer -->
         <footer class="main-footer">
             <div class="float-right d-none d-sm-inline">
-                Developed By Zakir
+                Developed By <a href="https://alnoman.vercel.app/">AL Noman</a>
             </div>
             <strong>
-                Copyright © 2014-2019
+                Copyright © 2026
                 <a href="https://adminlte.io">AdminLTE</a>.
             </strong>
         </footer>
@@ -206,6 +205,10 @@
                 });
             });
         });
+
+
+
+
     </script>
 
 </body>

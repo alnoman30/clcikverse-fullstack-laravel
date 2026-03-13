@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Category;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -9,33 +13,11 @@ class AdminController extends Controller
     // Dashboard
     public function index()
     {
-        return view('pages.backend.dashboard.index');
-    }
+        $blogs = Blog::latest()->get();
+        $categories = Category::all();
+        $tags = Tag::all();
+        $users = User::all();
 
-
-
-
-
-
-    // Post routes
-    public function post()
-    {
-        return view('pages.backend.post.index');
-    }
-
-    public function postCreate()
-    {
-        return view('pages.backend.post.create');
-    }
-
-
-    public function postEdit($id)
-    {
-        return view('pages.backend.post.edit');
-    }
-
-    public function postShow($id)
-    {
-        return view('pages.backend.post.show');
+        return view('pages.backend.dashboard.index', compact('blogs', 'categories', 'tags', 'users'));
     }
 }

@@ -44,7 +44,7 @@
 
                                 <h3 class="card-title">View Post</h3>
 
-                                <a href="{{ route('admin.post') }}" class="btn btn-primary">
+                                <a href="{{ route('blog.index') }}" class="btn btn-primary">
                                     Go Back to Post List
                                 </a>
 
@@ -60,63 +60,53 @@
 
                                 <tbody>
 
+                                    <!-- Image -->
                                     <tr>
-                                        <th style="width:200px">Image</th>
-
+                                        <th style="width:200px">Feature Image</th>
                                         <td>
                                             <div style="max-width:300px;max-height:300px;overflow:hidden">
-                                                <img src="https://via.placeholder.com/300" class="img-fluid">
+                                                @if ($blog->feature_image)
+                                                    <img src="{{ asset('uploads/blogs/' . $blog->feature_image) }}"
+                                                        class="img-fluid">
+                                                @else
+                                                    <img src="https://via.placeholder.com/300" class="img-fluid">
+                                                @endif
                                             </div>
                                         </td>
                                     </tr>
 
-
+                                    <!-- Title -->
                                     <tr>
                                         <th>Title</th>
-                                        <td>Learn Laravel in 10 Days</td>
+                                        <td>{{ $blog->title }}</td>
                                     </tr>
 
-
+                                    <!-- Category -->
                                     <tr>
                                         <th>Category Name</th>
-                                        <td>Programming</td>
+                                        <td>{{ $blog->category->name ?? '-' }}</td>
                                     </tr>
 
-
+                                    <!-- Tags -->
                                     <tr>
                                         <th>Post Tags</th>
-
                                         <td>
-                                            <span class="badge badge-primary">Laravel</span>
-                                            <span class="badge badge-primary">PHP</span>
-                                            <span class="badge badge-primary">Backend</span>
+                                            @foreach ($blog->tags as $tag)
+                                                <span class="badge badge-primary">{{ $tag->name }}</span>
+                                            @endforeach
                                         </td>
-
                                     </tr>
 
-
+                                    <!-- Author -->
                                     <tr>
                                         <th>Author Name</th>
-                                        <td>Admin</td>
+                                        <td>{{ $blog->user->name ?? '-' }}</td>
                                     </tr>
 
-
+                                    <!-- Description -->
                                     <tr>
                                         <th>Description</th>
-
-                                        <td>
-                                            <p>
-                                                Laravel is one of the most popular PHP frameworks used for building modern
-                                                web applications.
-                                            </p>
-
-                                            <p>
-                                                It provides elegant syntax, powerful tools, and features like routing,
-                                                authentication,
-                                                and database management that make development faster and easier.
-                                            </p>
-                                        </td>
-
+                                        <td>{!! $blog->description !!}</td>
                                     </tr>
 
                                 </tbody>
